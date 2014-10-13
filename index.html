@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script src="src/vendor/tmx-loader.js"></script>
+  </head>
+  <body>
+    <h1>Generic Platformer</h1>
+    <div id="canvases">
+      <canvas id="game">
+        Canvas not supported.
+      </canvas>
+    </div>
+    <script src="build/main.js"></script>
+    <script>
+      window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                window.oRequestAnimationFrame      ||
+                window.msRequestAnimationFrame     ||
+                function( callback ){
+                  window.setTimeout(callback, 1000 / 60);
+                };
+      })();
+
+      window.onload = function() {
+        var Game = require('game');
+        var game = new Game;
+        game.run();
+
+        document.onkeydown = game.onkeydown;
+      };
+    </script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
  <tileset firstgid="1" name="Image-Tileset" tilewidth="63" tileheight="63" spacing="1" margin="1">
   <image source="Image-Tileset.png" trans="ffffff" width="1218" height="386"/>
  </tileset>
- <layer name="Tile Layer 1" width="16" height="16">
+ <layer name="bg" width="16" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

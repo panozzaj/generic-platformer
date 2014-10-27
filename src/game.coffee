@@ -1,10 +1,13 @@
+MapScreen = require './mapScreen'
+
 module.exports = class Game
   constructor: ->
     @canvas = document.getElementById 'game'
     @canvas.width = 1024
-    @canvas.height = 640
+    @canvas.height = 2640
     @context = @canvas.getContext '2d'
     @context.imageSmoothingEnabled = false
+    @mapScreen = new MapScreen @
 
   run: =>
     @update()
@@ -16,11 +19,7 @@ module.exports = class Game
 
   draw: ->
     @clearCanvas()
-    @context.fillRect 30, 30, 100, 100
-    # draw something
+    @mapScreen.draw @context
 
   clearCanvas: ->
     @context.clearRect 0, 0, @canvas.width, @canvas.height
-
-  onkeydown: (event) =>
-    @responderManager.onkeydown(event)
